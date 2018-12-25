@@ -8,7 +8,7 @@ function check_winner($game){
     $collection = $connection_to_db -> testsite -> users;
     $filter = array("token" => $_COOKIE["token"]);
     $user = $collection->findOne($filter);
-    if ($game["score_1"]>10 || $game["score_2"]>10){
+    if ($game["score_1"]>100 || $game["score_2"]>100){
         $collection = $connection_to_db -> testsite -> top;
         $filter = array("login" => $user["login"]);
         $statistic = $collection->findOne($filter);
